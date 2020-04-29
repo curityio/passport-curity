@@ -1,0 +1,41 @@
+{
+  "name": "passport-curity",
+  "version": "1.0.0",
+  "description": "Curity authentication strategy for Passport.js",
+  "homepage": "https://github.com/curityio/passport-curity",
+  "repository": "curityio/passport-curity",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "passport",
+    "oauth",
+    "oauth2",
+    "openid",
+    "connect",
+    "Curity"
+  ],
+  "author": "Curity AB",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "openid-client": "^3.14.2"
+  },
+  "devDependencies": {
+    "ava": "^3.8.1",
+    "readable-mock-req": "^0.2.2",
+    "sinon": "^9.0.2"
+  },
+  "ava": {
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "engines": {
+    "node": "^10.13.0 || >=12.0.0"
+  }
+}

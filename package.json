@@ -1,6 +1,6 @@
 {
   "name": "passport-curity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Curity authentication strategy for Passport.js",
   "homepage": "https://github.com/curityio/passport-curity",
   "repository": "curityio/passport-curity",

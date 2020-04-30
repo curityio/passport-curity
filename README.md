@@ -3,8 +3,9 @@
 passport-curity is a strategy for the passport library which enables an effortless integration with the Curity Identity
 Server.
 
-It covers different scenarios of authenticating a user with the Identity Server using the Open ID Connect protocol.
-If you're looking for an option to secure your endpoints in an Express API app with JWTs have a look at this example: [express-oauth-example](@TODO: add link to github here)
+It covers different scenarios of authenticating a user with the Curity Identity Server using the Open ID Connect protocol.
+If you're looking for an option to secure your endpoints in an Express API app with JWTs have a look at this library:
+[express-oauth-jwt](https://github.com/curityio/express-oauth-jwt).
 
 ## Installation
 

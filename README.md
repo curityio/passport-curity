@@ -1,5 +1,8 @@
 # passport-curity
 
+[![Quality](https://curity.io/assets/images/badges/passport-curity-quality.svg)](https://curity.io/resources/code-examples/status/)
+[![Availability](https://curity.io/assets/images/badges/passport-curity-availability.svg)](https://curity.io/resources/code-examples/status/)
+
 passport-curity is a strategy for the passport library which enables an effortless integration with the Curity Identity
 Server.
 

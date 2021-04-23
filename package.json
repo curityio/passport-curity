@@ -5,6 +5,7 @@
   "homepage": "https://github.com/curityio/passport-curity",
   "repository": "curityio/passport-curity",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "ava"
   },

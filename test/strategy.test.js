@@ -82,17 +82,24 @@ test('Should not fallback to calling userinfo when ID token not present', t => {
 });
 
 
-test.cb('Should fallback to calling userinfo when ID token not present and option set', t => {
+async function promisifyStrategyAndAuthenticate(client, t, req) {
+    return new Promise((resolve) => {
+        const strategy = new Strategy({ client, fallbackToUserInfoRequest: true }, (accessToken, refreshToken, profile, callback) => {
+            t.true(client.userinfo.called, "Client should call userinfo endpoint");
+            callback(null, profile);
+            resolve();
+        });
+
+        strategy.success = () => {};
+
+        strategy.authenticate(req);
+    })
+}
+
+test('Should fallback to calling userinfo when ID token not present and option set', async t => {
     const client = getClient();
     sinon.stub(client, 'callback').callsFake(async () => {});
     sinon.stub(client, 'userinfo').callsFake(() => Promise.resolve({ sub: "someUser" }));
-
-    const strategy = new Strategy({ client, fallbackToUserInfoRequest: true }, (accessToken, refreshToken, profile, callback) => {
-        t.true(client.userinfo.called, "Client should call userinfo endpoint");
-        callback(null, profile);
-    });
-
-    strategy.success = () => { t.end(null) };
 
     const req = new MockRequest('GET', '/callback?code=somecode');
     req.session = {
@@ -101,5 +108,5 @@ test.cb('Should fallback to calling userinfo when ID token not present and optio
           }
     };
 
-    strategy.authenticate(req);
+    await promisifyStrategyAndAuthenticate(client, t, req)
 });
